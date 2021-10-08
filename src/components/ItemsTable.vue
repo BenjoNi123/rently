@@ -46,11 +46,11 @@ export default class ItemsTable extends Vue {
   get total(): number {
     return this.$store.getters.getTotal;
   }
-  deleteData() {
+  deleteData(): void {
     this.$store.dispatch("deleteItems", this.selected);
     this.selected = [];
   }
-  get disableDelete() {
+  get disableDelete(): boolean {
     if (this.selected.length == 0) {
       return true;
     } else return false;
